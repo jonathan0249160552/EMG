@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-xxxxxx" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/css/bootstrap.min.css"
+    integrity="sha512-xxxxxx" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .container {
+      max-width: 500px;
+      margin: 20px auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .request-form {
+      background-color: #f7f7f7;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-group input[type="text"],
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+    }
+
+    .form-group textarea {
+      height: 100px;
+    }
+
+    .form-group .btn-primary {
+      width: 100%;
+    }
+  </style>
+  <title>Ambulance Requests</title>
+</head>
+
+<body>
+  <div class="container">
+    <h2><i class="fas fa-ambulance"></i> Ambulance Request</h2>
+    <div class="request-form">
+      <form>
+        <div class="form-group">
+          <label for="name"><i class="fas fa-user"></i> Name:</label>
+          <input type="text" id="name" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+          <label for="phone"><i class="fas fa-phone"></i> Phone:</label>
+          <input type="text" id="phone" placeholder="Enter your phone number">
+        </div>
+        <div class="form-group">
+          <label for="location"><i class="fas fa-map-marker-alt"></i> Location:</label>
+          <textarea id="location" placeholder="Enter your location"></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary"><i class="fas fa-check"></i> Request Ambulance</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
+    integrity="sha512-xxxxxx" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-xxxxxx" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/js/bootstrap.min.js"
+    integrity="sha512-xxxxxx" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>
+

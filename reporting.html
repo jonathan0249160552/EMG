@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Emergency Reporting App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .container {
+      margin-top: 50px;
+    }
+    
+    .card {
+      border-radius: 10px;
+    }
+    
+    .card-header {
+      background-color: #333;
+      color: #fff;
+    }
+    
+    .card-body {
+      background-color: #f4f4f4;
+    }
+    
+    .btn-report {
+      background-color: #dc3545;
+      color: #fff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="mb-0">
+          <i class="fas fa-exclamation-triangle mr-2"></i>Emergency Reporting
+        </h5>
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <label for="location">
+              <i class="fas fa-map-marker-alt"></i> Location
+            </label>
+            <input type="text" class="form-control" id="location" placeholder="Enter location" required>
+          </div>
+          <div class="form-group">
+            <label for="emergency-type">
+              <i class="fas fa-exclamation-circle"></i> Emergency Type
+            </label>
+            <select class="form-control" id="emergency-type" required>
+              <option value="">Select emergency type</option>
+              <option value="fire">Fire</option>
+              <option value="medical">Medical</option>
+              <option value="accident">Accident</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="description">
+              <i class="fas fa-comment"></i> Description
+            </label>
+            <textarea class="form-control" id="description" rows="3" placeholder="Enter description" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-report">
+            <i class="fas fa-paper-plane"></i> Report Emergency
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
