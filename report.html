@@ -4,59 +4,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    integrity="sha512-xxxxxx" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/css/bootstrap.min.css"
-    integrity="sha512-xxxxxx" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    .container {
-      max-width: 500px;
-      margin: 20px auto;
-    }
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .request-form {
-      background-color: #f7f7f7;
-      padding: 20px;
-      border-radius: 5px;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      font-weight: bold;
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .form-group input[type="text"],
-    .form-group textarea {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 3px;
-    }
-
-    .form-group textarea {
-      height: 100px;
-    }
-
-    .form-group .btn-primary {
-      width: 100%;
-    }
-  </style>
   <title>Ambulance Requests</title>
 </head>
 
 <body>
+  <div class="topnav" id="myTopnav">
+    <a href="background.html">Home</a>
+    <a href="#report">Report</a>
+    <a href="#emergency">Emergency</a>
+    <a href="#contacts">Contacts</a>
+    <a href="#about">About</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fas fa-bars"></i></a>
+  </div>
   <div class="container">
-    <h2><i class="fas fa-ambulance"></i> Ambulance Request</h2>
+    <h2><i class="fas fa-ambulance"></i> Report Emergency</h2>
     <div class="request-form">
       <form>
         <div class="form-group">
@@ -69,22 +35,45 @@
         </div>
         <div class="form-group">
           <label for="location"><i class="fas fa-map-marker-alt"></i> Location:</label>
-          <textarea id="location" placeholder="Enter your location"></textarea>
+          <input type="text" name="location" id="">
         </div>
         <div class="form-group">
-          <button type="submit" class="btn btn-primary"><i class="fas fa-check"></i> Request Ambulance</button>
+          <label for="locationGps"><i class="fas fa-map-marker-alt"></i> GPS coordinate</label>
+          <input type="text" id="location-input" readonly>
+
+          <div class="for-group">
+            <label for="locationGps"><i class="fas fa-exclamation-triangle"></i> Select Type of Emergency</label>
+            <select id="emergency-type" class="form-control-lg">
+              <option value="fire">Fire</option>
+              <option value="medical">Medical Emergency</option>
+              <option value="accident">Accident</option>
+              <option value="natural-disaster">Natural Disaster</option>
+              <option value="chemical-spill">Chemical Spill</option>
+              <option value="gas-leak">Gas Leak</option>
+              <option value="earthquake">Earthquake</option>
+              <option value="flood">Flood</option>
+              <option value="power-outage">Power Outage</option>
+              <option value="terrorist-attack">Terrorist Attack</option>
+            </select>
+          </div>
+        </div>
+
+        <video id="video" class="my-3 card border border-primary"  height="480" autoplay></video>
+        <button id="capture-btn" class="btn btn-success">Capture</button>
+         <button id="close-btn" class="btn btn-danger">Close Camera</button>
+        <canvas id="canvas" width="640" height="480" style="display: none;"></canvas>
+        
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary"><i class="fas fa-check"></i>  Send Report</button>
         </div>
       </form>
     </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
-    integrity="sha512-xxxxxx" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-    integrity="sha512-xxxxxx" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/js/bootstrap.min.js"
-    integrity="sha512-xxxxxx" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
 </body>
+<script src="assets/js/script.js"></script>
+
 
 </html>
-
