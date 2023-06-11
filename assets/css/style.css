@@ -26,7 +26,7 @@
     .myicon {
       position: absolute;
       top: 53%;
-      left: 50%;
+      left: 45%;
     }
 
     .topnav {
@@ -78,7 +78,7 @@
       .myicon {
         position: absolute;
         top: 55%;
-        left: 40%;
+        left: 35%;
       }
     }
 
@@ -141,3 +141,5 @@
       .form-group .btn-primary {
         width: 100%;
       }
+
+      
