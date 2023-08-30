@@ -23,15 +23,14 @@
       margin-right: 10px;
     }
 
-    .myicon {
-      position: absolute;
-      top: 53%;
-      left: 45%;
-    }
 
     .topnav {
       background-color: #333;
       overflow: hidden;
+      position: fixed;
+      top: 0%;
+      width: 100%;
+      z-index:999;
     }
 
     .topnav a {
@@ -75,11 +74,11 @@
         text-align: center;
       }
 
-      .myicon {
+      /* .myicon {
         position: absolute;
         top: 55%;
         left: 35%;
-      }
+      } */
     }
 
     @media screen and (max-width: 600px) {

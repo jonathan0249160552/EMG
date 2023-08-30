@@ -12,67 +12,78 @@
 
 </head>
 <style>
-   body {
-      overflow: hidden;
+  body {
+    overflow: hidden;
+  }
+
+  .myicon {
+    position: fixed;
+    top: 45%;
+    left: 45%;
+  }
+
+
+  @media screen and (max-width: 600px) {
+
+    .myicon {
+      position: fixed;
+      top: 46%;
+      left: 35%;
     }
+  }
 
-    
+  .shortcut {
+    font-weight: bold;
+    top: 40%;
+    position: fixed;
+    color: white;
+
+  }
 </style>
+</style>
+
 <body>
-  <div class="topnav" id="myTopnav">
-    <a href="background.html">Home</a>
-    <a href="report.php">Report</a>
-    <a href="#emergency">Emergency</a>
-    <a href="#contacts">Contacts</a>
-    <a href="#about">About</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fas fa-bars"></i></a>
-  </div>
+  <?php require 'nav.php'; ?>
 
-  <div id="my-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-body">
-          <p>Content</p>
-        </div>
-      </div>
-    </div>
-  </div>
+  <marquee behavior="" direction="left" class="shortcut">Use the siren button for quick Emergency reporting <i class="fas fa-hand-point-down"></i></marquee>
+  <!-- <marquee behavior="" direction="left"></marquee> -->
 
-  <marquee behavior="" direction="left" style="font-weight: bolder;">Use the siren button for quick Emergency reporting
-  </marquee>
   <div class="myicon">
-    <a href="report.php" class="mybutton"><img src="assets/images/1.gif" width="100px"
-        class="rounded-circle shadow border" alt=""></a>
+    <a href="report_picture.php" class="mybutton"><img src="assets/images/1.gif" width="100px" class="rounded-circle shadow border" alt=""></a>
   </div>
   <div class="blue-section">
     <div class="container">
       <h1>Emergency Reporting App</h1>
       <p>
         <i class="fas fa-ambulance icon"></i>
-        Report emergencies and get help quickly.
+        <i class="fas fa-temperature-high"></i>
+        <i class="fas fa-heartbeat"></i>
+        <i class="fas fa-fire-extinguisher"></i>
+        <i class="fas fa-radiation"></i>
       </p>
     </div>
   </div>
 
   <div class="red-section">
     <div class="container">
-      <h1>Emergency Reporting App</h1>
-      <hr>
+      <!-- <h1>Emergency Reporting App</h1> -->
+      <!-- <hr> -->
       <p class="myp">
         <i class="fas fa-exclamation-triangle icon"></i>
-      <p> Urgent situations require immediate attention.</p>
-      </p>
+        <!-- <p> Urgent situations require immediate attention.</p> -->
 
+      </p>
+      <p class="text-center"> Report emergencies and get help quickly.</p>
     </div>
   </div>
 
 
 
 
-  
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
-<script src="assets/js/scriptNav.js"></script>
+  <script src="assets/js/scriptNav.js"></script>
 </body>
 
 </html>
