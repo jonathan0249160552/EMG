@@ -4,15 +4,26 @@ require_once 'config.php';
 class Auth extends Database
 {
 
-    public function sendImage($post_code, $user_id, $filename)
+    public function sendImage($post_code, $filename)
     {
-        $sql = "INSERT INTO image (post_id,cuser_id,image_path) VALUES (:post_code,:user_id,:filename)";
+        $sql = "INSERT INTO images (post_code,image_path) VALUES (:post_code,:image_path)";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute([
-            'post_code' => $post_code, 'user_id' => $user_id, 'filename' => $filename]);
+            'post_code' => $post_code, 'image_path' => $filename]);
 
         return true;
     }
+
+    public function sendVideo($post_code, $filename)
+    {
+        $sql = "INSERT INTO video (post_code,file_name) VALUES (:post_code,:file_name)";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([
+            'post_code' => $post_code, 'file_name' => $filename]);
+
+        return true;
+    }
+
 
 
     

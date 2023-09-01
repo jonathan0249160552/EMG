@@ -4,52 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-
-  <title>Ambulance Requests</title>
+  <title>Camera Image Upload</title>
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<style>
-    .container {
-      margin-top: 50px;
-    }
-
-    .card {
-      border-radius: 10px;
-    }
-
-    .card-header {
-      background-color: #333;
-      color: #fff;
-    }
-
-    .card-body {
-      background-color: #f4f4f4;
-    }
-
-    .btn-report {
-      background-color: #dc3545;
-      color: #fff;
-      font-weight: bold;
-    }
-
-    #recording-indicator {
-  width: 10px;
-  height: 10px;
-  background-color: red;
-  border-radius: 50%;
-  display: none;
-}
-
-  </style>
 
 <body>
-<?php require 'nav.php'?>
-  <div class="container">
+  <?php
+
+$post_code = bin2hex(random_bytes(15));
+?>
+  <?php require 'nav.php' ?>
+  <div class="container"><br><br><br>
     <h2><i class="fas fa-ambulance"></i> Report Emergency</h2>
-    
+
   </div>
   <div class="container">
     <div class="card">
@@ -57,69 +27,162 @@
         <h5 class="mb-0">
           <i class="fas fa-exclamation-triangle mr-2"></i> Emergency Reporting
         </h5>
-        <h5 class="border rounded p-2"><a href="reporting.php"><i class="fas fa-file-audio"></i> Use audio Instead</a></h5>
+        <!-- <h5 class="border rounded p-2"><a href="reporting.php"><i class="fas fa-file-audio"></i> Use audio Instead</a></h5> -->
       </div>
       <div class="card-body">
-        
-      <div class="request-form">
-      <form>
-        <div class="form-group">
-          <label for="name"><i class="fas fa-user"></i> Name:</label>
-          <input type="text" id="name" placeholder="Enter your name" required>
-        </div>
-        <div class="form-group">
-          <label for="phone"><i class="fas fa-phone"></i> Phone:</label>
-          <input type="text" id="phone" placeholder="Enter your phone number" required>
-        </div>
-        <div class="form-group">
-          <label for="location"><i class="fas fa-map-marker-alt"></i> Location:</label>
-          <input type="text" name="location" id="">
-        </div>
-        <div class="form-group">
-          <label for="locationGps"><i class="fas fa-map-marker-alt"></i> GPS coordinate</label>
-          <input type="text" id="location-input" readonly>
-        </div>
 
-        <div class="form-group">
-            <label for="locationGps"><i class="fas fa-exclamation-triangle"></i> Select Type of Emergency</label>
-            <select id="emergency-type" class="form-control-lg" required>
-              <option value="fire">Fire</option>
-              <option value="medical">Medical Emergency</option>
-              <option value="accident">Accident</option>
-              <option value="natural-disaster">Natural Disaster</option>
-              <option value="chemical-spill">Chemical Spill</option>
-              <option value="gas-leak">Gas Leak</option>
-              <option value="earthquake">Earthquake</option>
-              <option value="flood">Flood</option>
-              <option value="power-outage">Power Outage</option>
-              <option value="terrorist-attack">Terrorist Attack</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="description">
-              <i class="fas fa-comment"></i> Description
-            </label>
-            <textarea class="form-control" id="description" rows="3" placeholder="Enter description" required></textarea>
-          </div>
-        
-        <div class="form-group mt-2">
-          <button type="submit" class="btn btn-primary"><i class="fas fa-check"></i> Send Report</button>
+        <div class="request-form">
+          <form id="reportForm" method="post" action="#">
+            <div class="form-group">
+              <label for="name"><i class="fas fa-user"></i> Name:</label>
+              <input type="text" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+              <label for="phone"><i class="fas fa-phone"></i> Phone:</label>
+              <input type="text" id="phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-group">
+              <label for="location"><i class="fas fa-map-marker-alt"></i> Location:</label>
+              <input type="text" name="location" id="">
+            </div>
+            <div class="form-group">
+              <label for="locationGps"><i class="fas fa-map-marker-alt"></i> GPS coordinate</label>
+              <input type="text" id="location-input" readonly>
+            </div>
+
+            <div class="form-group">
+              <label for="locationGps"><i class="fas fa-exclamation-triangle"></i> Select Type of Emergency</label>
+              <select id="emergency-type" name="emg_type"lass="form-control-lg" required>
+                <option value="fire">Fire</option>
+                <option value="medical">Medical Emergency</option>
+                <option value="accident">Accident</option>
+                <option value="natural-disaster">Natural Disaster</option>
+                <option value="chemical-spill">Chemical Spill</option>
+                <option value="gas-leak">Gas Leak</option>
+                <option value="earthquake">Earthquake</option>
+                <option value="flood">Flood</option>
+                <option value="power-outage">Power Outage</option>
+                <option value="terrorist-attack">Terrorist Attack</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="description">
+                <i class="fas fa-comment"></i> Description
+              </label>
+              <textarea class="form-control" id="description" name="description"  rows="3" placeholder="Enter description" ></textarea>
+            </div>
+            <!-- <video id="video" class="my-3 card border border-primary" height="480" autoplay></video>
+            <button id="capture-btn" class="btn btn-success">Capture</button>
+            <button id="stop-btn" class="btn btn-danger">Close Camera</button>
+            <canvas id="canvas" width="640" height="480" style="display: none;"></canvas> -->
+            <div class="form-group mt-2">
+              <input type="hidden" name="post_code" id="post_code" value="<?=$post_code?>">
+              <!-- <button type="submit" class="btn btn-primary"><i class="fas fa-check"></i> Send Report</button> -->
+              <input type="submit" value="Submit report" class="submitBtn btn btn-primary">
+            </div>
+          </form>
+
         </div>
-      </form>
-
-      <video id="video" class="my-3 card border border-primary" height="480" autoplay></video>
-        <button id="capture-btn" class="btn btn-success">Capture</button>
-        <button id="stop-btn" class="btn btn-danger">Close Camera</button>
-        <canvas id="canvas" width="640" height="480" style="display: none;"></canvas>
-
-    </div>
       </div>
     </div>
   </div>
 
+  <video id="video" autoplay></video>
+  <canvas id="canvas" style="display: none;"></canvas>
+  <button id="capture-btn" class="btn btn-success">Capture and Upload Image</button>
+<script src="assets/js/jquery-3.5.1.jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
 
+	$(".submitBtn").click(function(e) {
+		if ($("#reportForm")[0].checkValidity()) {
+			e.preventDefault();
+
+			$(".submitBtn").val('Please Wait...');
+			$.ajax({
+				url: 'assets/php/process.php',
+				method: 'post',
+				data: $("#reportForm").serialize() + '&action=reporting',
+				success: function(response) {
+					// console.log(response);
+					$(".submitBtn").val('Sign In');
+				
+						$("#loginAlert").html(response);
+
+					
+				}
+			});
+		}
+	});
+
+
+
+      const video = document.getElementById('video');
+      const canvas = document.getElementById('canvas');
+      const captureButton = document.getElementById('capture-btn');
+      var post_code = document.getElementById('post_code').value
+      // Set video element styles
+      video.style.width = '100%';
+      video.style.height = 'auto';
+      video.style.objectFit = 'cover';
+
+      let stream;
+      let mediaStreamTrack;
+
+      function initializeCamera() {
+        navigator.mediaDevices.getUserMedia({
+            video: true
+          })
+          .then((streamObj) => {
+            stream = streamObj;
+            video.srcObject = stream;
+            mediaStreamTrack = stream.getVideoTracks()[0];
+          })
+          .catch((error) => {
+            console.log('Error accessing camera:', error);
+          });
+      }
+
+      // Function to capture and process the image
+      function captureImage(event) {
+        event.preventDefault();
+
+        const context = canvas.getContext('2d');
+        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+        const imageData = canvas.toDataURL('image/jpeg');
+        const data = {
+          imageData: imageData,
+      post_code: post_code
+   
+    };
+
+        // Send the image data to the server using AJAX
+        $.ajax({
+          type: 'POST',
+          url: 'assets/php/proccess.php', // Replace with your PHP endpoint
+          data: JSON.stringify(data),
+          success: function(response) {
+            console.log('Image saved successfully.');
+            console.log(response);
+          },
+          error: function(error) {
+            console.log('Error saving image:', error);
+          }
+        });
+      }
+
+      // Attach event listeners to the capture button
+      captureButton.addEventListener('click', captureImage);
+
+      // Check and initialize the camera
+      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        initializeCamera();
+      } else {
+        console.log('getUserMedia is not supported on this browser');
+      }
+    });
+  </script>
 </body>
-<script src="assets/js/script.js"></script>
-
 
 </html>

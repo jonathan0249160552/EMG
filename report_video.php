@@ -6,9 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <style>
   body{
@@ -20,7 +20,10 @@
 </style>
 <body>
   <?php require 'nav.php' ?>
+  <?php
 
+$post_code = bin2hex(random_bytes(15));
+?>
   <div class="container">
     <div class=" w-100  card videoContainer shadow">
       <div class="card-header bg-info d-flex justify-content-between">
@@ -30,7 +33,7 @@
         <h5 class="border rounded p-1"><a href="report.php"><i class="fas fa-file-video"></i> Use Image</a></h5>
       </div>
 
-
+      <input type="text" name="post_code" id="post_code" value="<?=$post_code?>">
       <div class="card">
         <div class="card-body">
           <video id="video-preview" class="w-100" controls></video>
@@ -44,8 +47,8 @@
     </div>
   </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery-3.5.1.jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/scriptVideo.js"></script>
 
 </body>

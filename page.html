@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Image Capture and Submission</title>
+</head>
+<body>
+    <form id="userForm" enctype="multipart/form-data">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <div>
+            <label for="imageInput">Capture Image:</label>
+            <input type="file" id="imageInput" accept="image/*" capture="camera" required>
+        </div><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>

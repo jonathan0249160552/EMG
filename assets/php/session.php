@@ -1,8 +1,8 @@
 <?php
-// session_start();
+session_start();
 
-// require_once 'auth.php';
-// $cuser = new Auth();
+require_once 'auth.php';
+$cuser = new Auth();
 
 
 // if(!isset($_SESSION['user'])){

@@ -81,7 +81,7 @@ $(document).ready(function() {
       formData.append('video', videoBlob, 'video.webm');
   
       $.ajax({
-        url: 'assets/php/save_video.php',
+        url: 'assets/php/process.php',
         type: 'POST',
         data: formData,
         contentType: false,
