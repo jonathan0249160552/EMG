@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>Emergency Reporting App</title>
@@ -60,33 +61,44 @@
     }
   </style>
 </head>
+
 <body>
+<?php require 'assets/php/session.php'; ?>
+<?php
+  if ($admin == "0") {
+    header('location:login.php');
+            die;
+echo '  <script>
+alert("You are not an admin")
+</script>';
+  }
+  
+  
+  ?>
+  
   <!-- Open button -->
   <button id="openBtn" onclick="openNav()"><i class="fas fa-bars"></i></button>
 
   <!-- Side navigation -->
   <div id="mySidenav" class="sidenav">
-    <a href="#">Home</a>
-    <a href="#">Users</a>
-    <a href="#">Units</a>
+    <a href="dashboard.php">Home</a>
+    <a href="users.php">Users</a>
+    <a href="admin.php"> Admin</a>
     <a href="#">Dispatch</a>
-    <a href="#">Departments</a>
-    <a href="#">Reports</a>
+    <a href="report.php">Reports</a>
     <a href="#">Emergency Contacts</a>
     <a href="">Maps</a>
     <a href="">Chats</a>
-    <a href="">All Reports</a>
     <a href="">Send Alerts</a>
-    <a href="#">Settings</a>
-    
+    <a href="admin_profile.php">profile</a>
     <a href="#">Logout</a>
     <a href="javascript:void(0);" class="closebtn" onclick="closeNav()">&times;</a>
   </div>
 
   <!-- Page content -->
   <div class="container">
-    <h1>Welcome live savers</h1>
-   
+    <h1 class="text-center ">Welcome live savers</h1>
+
   </div>
 
   <script>
@@ -101,4 +113,5 @@
     }
   </script>
 </body>
+
 </html>

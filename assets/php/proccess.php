@@ -1,5 +1,5 @@
 <?php
-require 'auth.php';
+require 'emg_auth.php';
 $cuser = new Auth();
 
     $data = json_decode(file_get_contents('php://input'), true);

@@ -35,19 +35,25 @@ $post_code = bin2hex(random_bytes(15));
           <form id="reportForm" method="post" action="#">
             <div class="form-group">
               <label for="name"><i class="fas fa-user"></i> Name:</label>
-              <input type="text" id="name" placeholder="Enter your name" required>
+              <input type="text" id="name" name="name" placeholder="Enter your name" required>
             </div>
             <div class="form-group">
               <label for="phone"><i class="fas fa-phone"></i> Phone:</label>
-              <input type="text" id="phone" placeholder="Enter your phone number" required>
+              <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
             </div>
+
+             <div class="form-group">
+              <label for="phone"><i class="fas fa-phone"></i> Emergency Contact:</label>
+              <input type="text" id="contact" name="contact" placeholder="Enter your phone number" required>
+            </div>
+
             <div class="form-group">
               <label for="location"><i class="fas fa-map-marker-alt"></i> Location:</label>
               <input type="text" name="location" id="">
             </div>
             <div class="form-group">
               <label for="locationGps"><i class="fas fa-map-marker-alt"></i> GPS coordinate</label>
-              <input type="text" id="location-input" readonly>
+              <input type="text" id="location-input" name="gps" readonly>
             </div>
 
             <div class="form-group">
@@ -71,13 +77,9 @@ $post_code = bin2hex(random_bytes(15));
               </label>
               <textarea class="form-control" id="description" name="description"  rows="3" placeholder="Enter description" ></textarea>
             </div>
-            <!-- <video id="video" class="my-3 card border border-primary" height="480" autoplay></video>
-            <button id="capture-btn" class="btn btn-success">Capture</button>
-            <button id="stop-btn" class="btn btn-danger">Close Camera</button>
-            <canvas id="canvas" width="640" height="480" style="display: none;"></canvas> -->
             <div class="form-group mt-2">
               <input type="hidden" name="post_code" id="post_code" value="<?=$post_code?>">
-              <!-- <button type="submit" class="btn btn-primary"><i class="fas fa-check"></i> Send Report</button> -->
+              <div class="alert"></div>
               <input type="submit" value="Submit report" class="submitBtn btn btn-primary">
             </div>
           </form>
@@ -89,8 +91,11 @@ $post_code = bin2hex(random_bytes(15));
 
   <video id="video" autoplay></video>
   <canvas id="canvas" style="display: none;"></canvas>
+  <div class="captured"></div>
   <button id="capture-btn" class="btn btn-success">Capture and Upload Image</button>
 <script src="assets/js/jquery-3.5.1.jquery.min.js"></script>
+<script src="assets/js/script.js"></script>
+<script src="assets/js/sweetalert2.min.js"></script>
   <script>
     $(document).ready(function() {
 
@@ -100,14 +105,14 @@ $post_code = bin2hex(random_bytes(15));
 
 			$(".submitBtn").val('Please Wait...');
 			$.ajax({
-				url: 'assets/php/process.php',
+				url: 'assets/php/submit_action.php',
 				method: 'post',
 				data: $("#reportForm").serialize() + '&action=reporting',
 				success: function(response) {
-					// console.log(response);
-					$(".submitBtn").val('Sign In');
+					console.log(response);
+					$(".submitBtn").val('Submit Report');
 				
-						$("#loginAlert").html(response);
+						$(".alert").html(response);
 
 					
 				}
@@ -164,6 +169,7 @@ $post_code = bin2hex(random_bytes(15));
           data: JSON.stringify(data),
           success: function(response) {
             console.log('Image saved successfully.');
+            alert("Image captured")
             console.log(response);
           },
           error: function(error) {

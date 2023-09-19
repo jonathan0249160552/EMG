@@ -6,48 +6,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 </head>
+<?php require 'nav.php' ?>
 
 <body>
-    <?php require 'nav.php' ?>
-
-    <body>
-        <div class="container border">
-            <div style="margin-top: 70px;">
+    <div class="container border">
+        <div style="margin-top: 70px;">
 
             <h1 class="text-center">Tips Tab</h1>
 
             <ul class="nav nav-tabs alert-secondary">
                 <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#tab1">Accidents</a>
+                    <a class="nav-link  tab1" href="#tab1">Accidents</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#tab2">Crime</a>
+                <li class="nav-item tab2">
+                    <a class="nav-link" href="#tab2">Crime</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#tab3">Domestic</a>
+                <li class="nav-item tab3">
+                    <a class="nav-link" href="#tab3">Domestic</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#tab4">Fire</a>
+                <li class="nav-item tab4">
+                    <a class="nav-link" href="#tab4">Fire</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#tab5">First Aid</a>
+                <li class="nav-item tab5">
+                    <a class="nav-link" href="#tab5">First Aid</a>
                 </li>
             </ul>
 
             <div class="tab-content">
-                <div class="tab-pane fade show active" id="tab1"><br><br>
-                 
+                <div class="tab-pane  show active" id="tab1"><br><br>
+
 
                     <div class="card">
                         <!-- <div class="card-header">
     <h1>Emergency Handling - Accidents</h1>
     </div> -->
                         <div class="card-body">
-                        <h3>Accident Handling</h3>
+                            <h3>Accident Handling</h3>
                             <div class="card my-3 p-3 shadow alert-danger">
                                 <h4> Response Guidelines</h4>
                                 <ul>
@@ -108,15 +107,15 @@
                     </div>
 
                 </div>
-                <div class="tab-pane fade" id="tab2"><br><br>
-                  
+                <div class="tab-pane " id="tab2"><br><br>
+
 
                     <div class="card">
                         <!-- <div class="card-header">
                             <h1>Crime Emergency Response</h1>
                         </div> -->
                         <div class="card-body">
-                        <h3>Crime Response</h3>
+                            <h3>Crime Response</h3>
                             <div class="card my-3 p-3 shadow alert-success">
                                 <h4>Emergency Contacts</h4>
                                 <p>In case of a crime emergency, please contact the following:</p>
@@ -155,14 +154,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="tab3"><br><br>
-                   
+                <div class="tab-pane " id="tab3"><br><br>
+
                     <div class="card">
                         <!-- <div class="card-header">
                             <h1>Handling Domestic Emergencies</h1>
                         </div> -->
                         <div class="card-body">
-                        <h3> Domestic Emergencies</h3>
+                            <h3> Domestic Emergencies</h3>
                             <div class="card">
                                 <div class="card-body m-3 p-3 shadow alert-primary">
                                     <h4>Emergency Contact Numbers:</h4>
@@ -232,7 +231,7 @@
 
 
                 </div>
-                <div class="tab-pane fade" id="tab4"><br> <br>
+                <div class="tab-pane " id="tab4"><br> <br>
 
 
                     <div class="card">
@@ -274,70 +273,114 @@
                     </div>
 
                 </div>
-                <div class="tab-pane fade" id="tab5">
+                <div class="tab-pane " id="tab5">
                     <div class="card shadow alert-success p-3 my-4">
-                    <h3 class="text-center m-4">First Aid Tips</h3>
-                    <!-- <h1>First Aid Tips</h1> -->
+                        <h3 class="text-center m-4">First Aid Tips</h3>
+                        <!-- <h1>First Aid Tips</h1> -->
 
 
-                    <div class="first-aid-step">
-                        <h4 class="">Step 1: Assess the Situation</h4>
-                        <p class="step-description">
-                            Before providing first aid, it's important to assess the situation and ensure your safety as well as the safety of the injured person.
-                            Evaluate the environment for any potential hazards and take necessary precautions.
-                        </p>
-                    </div>
+                        <div class="first-aid-step">
+                            <h4 class="">Step 1: Assess the Situation</h4>
+                            <p class="step-description">
+                                Before providing first aid, it's important to assess the situation and ensure your safety as well as the safety of the injured person.
+                                Evaluate the environment for any potential hazards and take necessary precautions.
+                            </p>
+                        </div>
 
-                    <div class="first-aid-step">
-                        <h4 class="">Step 2: Call for Help</h4>
-                        <p class="step-description">
-                            If the injury or medical condition is severe or life-threatening, call emergency services immediately or ask someone nearby to do so.
-                            Provide them with accurate information about the situation and follow their instructions while waiting for professional help.
-                        </p>
-                    </div>
+                        <div class="first-aid-step">
+                            <h4 class="">Step 2: Call for Help</h4>
+                            <p class="step-description">
+                                If the injury or medical condition is severe or life-threatening, call emergency services immediately or ask someone nearby to do so.
+                                Provide them with accurate information about the situation and follow their instructions while waiting for professional help.
+                            </p>
+                        </div>
 
-                    <div class="first-aid-step">
-                        <h4 class="">Step 3: Provide Basic First Aid</h4>
-                        <p class="step-description">
-                            Depending on the type of injury or condition, you can administer basic first aid techniques such as:
-                        </p>
-                        <ul>
-                            <li>Applying pressure to control bleeding</li>
-                            <li>Performing CPR (Cardiopulmonary Resuscitation) for someone who is not breathing</li>
-                            <li>Stabilizing fractures or dislocations</li>
-                            <li>Providing rescue breaths for someone who is not breathing but has a pulse</li>
-                            <li>Elevating injured limbs to reduce swelling</li>
-                            <li>Using an automated external defibrillator (AED) if available and trained to do so</li>
-                        </ul>
-                    </div>
+                        <div class="first-aid-step">
+                            <h4 class="">Step 3: Provide Basic First Aid</h4>
+                            <p class="step-description">
+                                Depending on the type of injury or condition, you can administer basic first aid techniques such as:
+                            </p>
+                            <ul>
+                                <li>Applying pressure to control bleeding</li>
+                                <li>Performing CPR (Cardiopulmonary Resuscitation) for someone who is not breathing</li>
+                                <li>Stabilizing fractures or dislocations</li>
+                                <li>Providing rescue breaths for someone who is not breathing but has a pulse</li>
+                                <li>Elevating injured limbs to reduce swelling</li>
+                                <li>Using an automated external defibrillator (AED) if available and trained to do so</li>
+                            </ul>
+                        </div>
 
-                    <div class="first-aid-step">
-                        <h4 class="">Step 4: Comfort and Reassure</h4>
-                        <p class="step-description">
-                            While waiting for professional help, it's important to provide comfort and reassurance to the injured person.
-                            Stay with them, speak calmly, and let them know that help is on the way.
-                        </p>
-                    </div>
+                        <div class="first-aid-step">
+                            <h4 class="">Step 4: Comfort and Reassure</h4>
+                            <p class="step-description">
+                                While waiting for professional help, it's important to provide comfort and reassurance to the injured person.
+                                Stay with them, speak calmly, and let them know that help is on the way.
+                            </p>
+                        </div>
 
-                    <div class="first-aid-step">
-                        <h4 class="">Step 5: Follow Up</h4>
-                        <p class="step-description">
-                            After the immediate first aid is provided, it's essential to follow up with appropriate medical care.
-                            Encourage the injured person to seek further evaluation and treatment from healthcare professionals for proper recovery.
-                        </p>
-                    </div>
+                        <div class="first-aid-step">
+                            <h4 class="">Step 5: Follow Up</h4>
+                            <p class="step-description">
+                                After the immediate first aid is provided, it's essential to follow up with appropriate medical care.
+                                Encourage the injured person to seek further evaluation and treatment from healthcare professionals for proper recovery.
+                            </p>
+                        </div>
                     </div>
 
                 </div>
             </div>
-       
-            </div>
-        </div>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    </body>
+        </div>
+    </div>
+
+    <script src="assets/js/jquery-3.5.1.jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script>
+        $('.tab1').click(function() {
+            $('#tab1').fadeIn();
+            $('#tab2').hide();
+            $('#tab3').hide();
+            $('#tab4').hide();
+            $('#tab5').hide();
+            
+        })
+
+        $('.tab2').click(function() {
+            $('#tab2').fadeIn();
+            $('#tab1').hide();
+            $('#tab3').hide();
+            $('#tab4').hide();
+            $('#tab5').hide();
+            
+        })
+
+        $('.tab3').click(function() {
+            $('#tab3').fadeIn();
+            $('#tab1').hide();
+            $('#tab2').hide();
+            $('#tab4').hide();
+            $('#tab5').hide();
+            
+        })
+
+        $('.tab4').click(function() {
+            $('#tab4').fadeIn();
+            $('#tab1').hide();
+            $('#tab2').hide();
+            $('#tab3').hide();
+            $('#tab5').hide();
+            
+        })
+
+        $('.tab5').click(function() {
+            $('#tab5').fadeIn();
+            $('#tab1').hide();
+            $('#tab2').hide();
+            $('#tab3').hide();
+            $('#tab4').hide();
+            
+        })
+    </script>
 </body>
 
 </html>

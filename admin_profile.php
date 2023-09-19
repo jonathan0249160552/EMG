@@ -10,8 +10,8 @@
 </head>
 
 <body>
-  <?php require 'nav.php' ?>
-  <?php require 'assets/php/session.php'; ?>
+  <?php require 'nav_bar.php' ?>
+ 
   <div class="container" style="margin-top:100px">
     <!-- <h1 class="text-center">Profile Management</h1> -->
 

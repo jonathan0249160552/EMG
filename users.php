@@ -16,13 +16,13 @@
 </head>
 
 <body>
-  <?php require 'nav.php'; ?>
-  <?php require 'assets/php/session.php'; ?>
+  <?php require 'nav_bar.php'; ?>
+
   
 <div class="container " style="margin-top: 100px;">
   <div class="">
     <div class="">
-      <div class="card-body displayReports table-responsive">
+      <div class="card-body displayAllUsers">
 
       </div>
     </div>
@@ -33,26 +33,25 @@
   <script>
     $(document).ready(function() {
       $('.table').DataTable();
-      displayReports();
+      displayAllUsers();
 
       //display all note of a user
-      function displayReports() {
+      function displayAllUsers() {
         $.ajax({
           url: 'assets/php/data_display.php',
           method: 'post',
           data: {
-            action: 'displayReportUser'
+            action: 'displayAllUsers'
           },
           success: function(response) {
-            $(".displayReports").html(response);
+            $(".displayAllUsers").html(response);
 
           }
         });
       }
 
-      $('body').on("click", ".reportDelete", function(e) {
-        reportDelete = $(this).attr('id');
-        alert(reportDelete);
+      $('body').on("click", ".deleteBtn", function(e) {
+        deleteBtn = $(this).attr('id');
         Swal.fire({
           title: 'Are you sure you want to delete?',
           text: "",
@@ -67,7 +66,7 @@
               url: 'assets/php/action_del.php',
               method: 'post',
               data: {
-                reportDelete: reportDelete
+                deleteBtn: deleteBtn
               },
               success: function(response) {
                 Swal.fire({
@@ -75,7 +74,7 @@
                       type: 'success'
                     });
                 console.log(response)
-                // location.reload()
+                location.reload()
               }
             });
 

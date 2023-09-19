@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const userForm = document.getElementById('userForm');
-    
+    alert("Image captured")
     userForm.addEventListener('submit', function(event) {
         event.preventDefault();
         

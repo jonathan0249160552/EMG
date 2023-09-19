@@ -17,23 +17,6 @@
 <body>
   <h1>Get User's Device Location</h1>
 
-  <button onclick="getUserLocation()">Get Location</button>
-  <button onclick="openLocationOnGoogleMaps()">Open Location on Google Maps</button>
-
-  <script>
-    var latitude;
-    var longitude;
-
-  
-    function openLocationOnGoogleMaps() {
-      if (latitude && longitude) {
-        var url = 'https://www.google.com/maps/search/?api=1&query=' + latitude + ',' + longitude;
-        window.open(url, '_blank');
-      } else {
-        alert('Location not yet acquired. Click "Get Location" first.');
-      }
-    }
-  </script>
 
 </body>
 </html>

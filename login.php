@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if (isset($_SESSION['user'])) {
+    header('location:report_list.php');
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,10 +20,24 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    
+
 
 </head>
 
+<style>
+    body {
+        /* font-family: 'Open Sans', sans-serif; */
+        line-height: 28px;
+        background-image: url('assets/images/cover.png');
+        /* Replace 'background.jpg' with your image file path */
+        background-size: cover;
+        /* Adjust the size to cover the entire viewport */
+        background-repeat: no-repeat;
+        /* Prevent image repetition */
+        background-attachment: fixed;
+        /* Keep the background fixed while scrolling */
+
+    }
 </style>
 
 <body>
@@ -27,22 +50,24 @@
         <div class="container mt-4 pt-4">
 
             <div class="card-body">
-        <a href="account.php">Register</a>
+                <h3 class="text-center text-white">Please login into your account</h3>
                 <div class="request-form">
+
                     <form action="#" method="post" id="loginForm">
                         <div class="form-group">
                             <label for="name"><i class="fas fa-user"></i>User name</label>
-                            <input type="text" id="name" placeholder="Enter your user name" required>
+                            <input type="text" id="name" name="username" placeholder="Enter your user name" required>
                         </div>
                         <div class="form-group">
                             <label for="phone"><i class="fas fa-phone"></i> Password:</label>
-                            <input type="text" id="phone" placeholder="Enter your password" required>
+                            <input type="text" id="phone" name="password" placeholder="Enter your password" required>
                         </div>
-                     
-                        <div id="Alert"></div>
+
+                        <div id="loginAlert"></div>
 
                         <div class="form-group mt-2">
-                            <input type="text" class="submitBtn btn btn-success" value="Login">
+                            <input type="submit" class="submitBtn btn btn-success" value="Login">
+                            <a href="account.php" class="btn btn-success">Register</a><br>
                         </div>
                     </form>
 
@@ -56,8 +81,7 @@
 
 
 
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script> -->
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/jquery-3.5.1.jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
     <script src="assets/js/scriptNav.js"></script>
     <script>
@@ -67,15 +91,19 @@
 
                 $(".submitBtn").val('Please Wait...');
                 $.ajax({
-                    url: 'assets/php/process.php',
+                    url: 'assets/php/submit_action.php',
                     method: 'post',
                     data: $("#loginForm").serialize() + '&action=logging',
                     success: function(response) {
-                        // console.log(response);
-                        $(".submitBtn").val('Sign up');
+                        console.log(response);
+                        if (response === 'login') {
+                            window.location = 'report_list.php';
+                            location.reload()
 
-                        $("#Alert").html(response);
-
+                        } else {
+                            $("#loginAlert").html(response);
+                            $(".submitBtn").val('Login');
+                        }
 
                     }
                 });

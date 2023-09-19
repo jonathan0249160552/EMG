@@ -72,7 +72,7 @@ $(document).ready(function() {
   $(document).ready(function() {
     const captureBtn = document.getElementById('capture-btn');
     const videoPreview = document.getElementById('video-preview');
-  
+    var post_code = document.getElementById('post_code').value
     // ...
   
     // AJAX function to send the video to the server
@@ -83,7 +83,7 @@ $(document).ready(function() {
       $.ajax({
         url: 'assets/php/process.php',
         type: 'POST',
-        data: formData,
+        data:{formData:formData,post_code}, 
         contentType: false,
         processData: false,
         success: function(response) {

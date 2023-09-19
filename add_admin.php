@@ -10,31 +10,20 @@
     <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
-<style>
 
-body {
-    /* font-family: 'Open Sans', sans-serif; */
-    line-height:28px;
-    background-image: url('assets/images/cover.png'); /* Replace 'background.jpg' with your image file path */
-    background-size: cover; /* Adjust the size to cover the entire viewport */
-    background-repeat: no-repeat; /* Prevent image repetition */
-    background-attachment: fixed; /* Keep the background fixed while scrolling */
- 
-}
 </style>
-<body>
-    <?php require 'nav.php'; ?>
 
-    <marquee behavior="" direction="left" class="shortcut">Use the siren button for quick Emergency reporting <i class="fas fa-hand-point-down"></i></marquee>
+<body>
+    <?php require 'nav_bar.php'; ?>
+
     <div class=" justify-content-center">
 
 
         <div class="container mt-4 pt-4">
-<h3 class="text-center text-white">Please create account</h3>
+
             <div class="card-body">
-                
+                <a href="login.php">Login</a>
                 <div class="request-form">
-                <a href="login.php" class="btn btn-success">Login</a>
                     <form action="#" method="post" id="registerForm">
                     <div class="form-group">
                             <label for="name"><i class="fas fa-user"></i> User name:</label>
@@ -88,8 +77,8 @@ body {
 
 
 
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script> -->
-    <script src="assets/js/jquery-3.5.1.jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <!-- <script src="assets/js/jquery-3.5.1.jquery.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
     <script src="assets/js/scriptNav.js"></script>
     <script>
@@ -110,13 +99,13 @@ body {
 					$.ajax({
 						url: 'assets/php/submit_action.php ',
 						method: 'post',
-						data: $("#registerForm").serialize() + '&action=register',
+						data: $("#registerForm").serialize() + '&action=registerAdmin',
 						success: function(response) {
 								console.log(response);
 								$(".Alert").html(response);
 							$("#submitBtn").val('Create');
                             $(".alert").html(response);
-                            $(".registerForm")[0].reset();
+				
 
 						}
 					});
